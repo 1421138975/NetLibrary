@@ -1,0 +1,10 @@
+TODO 这个Library 主要是通过 Rxjava + Retrofit + Okhttp 来实现的一个自定义BaseNetwork的一个module
+
+Okhttp 用来进行网络请求的--->请求也是使用线程池来进行的
+
+Retrofit 的原理 通过注解+反射+动态代理方式进行的对Okhttp的一个封装 通过Interface里面的方法使用指定的注解
+       来拼接请求的Url在把他传递个Okhttp进行网络请求,在将请求到的数据返回出去
+
+Rxjava 的原理  Rxjava是响应式编程 被观察者通过订阅 获取观察者对象 然后一步一步的发送给观察者
+       在网络请求的作用是将网络请求的数据封装成一个被观察者,通过Retrofit代理的接口调用方法获取数据
+       在更新UI,其中通过线程切换来实现子线程负责网络请求,主线程负责更新UI
